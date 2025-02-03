@@ -30,6 +30,10 @@ static StackType_t xCoPeriodicStack[CONFIG_CO_PERIODIC_TASK_STACK_SIZE];
 static TaskHandle_t xCoPeriodicTaskHandle = NULL;
 static void CO_periodicTask(void *pxParam);
 
+CO_t* CO_obtain(void){
+    return CO;
+}
+
 bool CO_ESP32_init()
 {
     ESP_LOGI(TAG, "Initializing");
